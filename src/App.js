@@ -6,7 +6,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <RouterProvider router={router} />
+      <div style={{ padding: 20 }}>
+        <RouterProvider router={router} />
+      </div>
     </div>
   );
 }
