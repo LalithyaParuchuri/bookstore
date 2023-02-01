@@ -4,6 +4,6 @@
 }
 .total {
     display: grid;
-    grid-template-columns: 74% auto 14%;
+    grid-template-columns: 62% 10% auto;
     margin: 20px 0;
 }
