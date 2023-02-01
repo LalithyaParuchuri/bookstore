@@ -1,34 +1,13 @@
+import { useContext } from "react";
+import { CartContext } from "../../App";
 import { CartItem } from "../../components/cart-item";
 import "./style.css";
 
-const cartItems = [
-  {
-    bookID: 1,
-    image: "https://picsum.photos/300/300",
-    title: "XYZ",
-    author: "ABC",
-    description: "JHJKDHH hifhifiuwh",
-    price: "$100",
-  },
-  {
-    bookID: 1,
-    image: "https://picsum.photos/300/300",
-    title: "XYZ",
-    author: "ABC",
-    description: "JHJKDHH hifhifiuwh",
-    price: "$100",
-  },
-  {
-    bookID: 1,
-    image: "https://picsum.photos/300/300",
-    title: "XYZ",
-    author: "ABC",
-    description: "JHJKDHH hifhifiuwh",
-    price: "$100",
-  },
-];
-
 export const Cart = () => {
+  const cartContext = useContext(CartContext);
+  console.log(cartContext);
+  const cartItems = cartContext.cartItems || [];
+
   return (
     <div className="cart-container">
       {cartItems.map((item) => {

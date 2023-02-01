@@ -1,9 +1,27 @@
 import "./style.css";
 import cart from "../../assets/cart_icon.png";
-export const Book = ({ title, author, price, description, imageUrl }) => {
+import { useContext } from "react";
+import { CartContext } from "../../App";
+export const Book = ({ id, title, author, price, description, imageUrl }) => {
+  const cartContext = useContext(CartContext);
+
+  const addBookToCartHanlder = () => {
+    const book = {
+      id,
+      title,
+      author,
+      price,
+      description,
+      imageUrl,
+    };
+
+    //Add book to cart context
+    cartContext.addToCart(book);
+  };
+
   return (
     <div className="book-container">
-      <img className="cart" src={cart} />
+      <img className="cart" src={cart} onClick={addBookToCartHanlder} />
       <img className="img" src={imageUrl} />
       <div className="info">
         <p>Book Title: {title}</p>

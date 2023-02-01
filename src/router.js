@@ -1,4 +1,3 @@
-import { createBrowserRouter } from "react-router-dom";
 import { Cart } from "./pages/cart";
 import { ListBooks } from "./pages/list-books";
 
@@ -14,5 +13,3 @@ export const routes = [
     element: <Cart />,
   },
 ];
-
-export const router = createBrowserRouter(routes);

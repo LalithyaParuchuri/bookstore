@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { routes } from "../../router";
 import "./style.css";
 
@@ -10,7 +11,7 @@ export const Header = () => {
         {routes.map((route) => {
           return (
             <div key={route.name} className="route">
-              <a href={route.path}>{route.name}</a>
+              <Link to={route.path}>{route.name}</Link>
             </div>
           );
         })}
