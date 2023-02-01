@@ -1,3 +1,4 @@
+import { useSnackbar } from "notistack";
 import { useContext } from "react";
 import { CartContext } from "../../App";
 import remove from "../../assets/remove_icon.png";
@@ -12,9 +13,17 @@ export const CartItem = ({
   price,
 }) => {
   const cartContext = useContext(CartContext);
+  const { enqueueSnackbar } = useSnackbar();
 
   const onCartItemRemoveHandler = () => {
     cartContext.removeFromCart(cartItemID);
+    enqueueSnackbar("Sucessfully removed from the cart", {
+      variant: "success",
+      anchorOrigin: {
+        horizontal: "right",
+        vertical: "top",
+      },
+    });
   };
 
   return (

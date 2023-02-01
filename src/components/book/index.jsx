@@ -2,8 +2,11 @@ import "./style.css";
 import cart from "../../assets/cart_icon.png";
 import { useContext } from "react";
 import { CartContext } from "../../App";
+import { useSnackbar } from "notistack";
+
 export const Book = ({ id, title, author, price, description, imageUrl }) => {
   const cartContext = useContext(CartContext);
+  const { enqueueSnackbar } = useSnackbar();
 
   const addBookToCartHanlder = () => {
     const book = {
@@ -17,6 +20,13 @@ export const Book = ({ id, title, author, price, description, imageUrl }) => {
 
     //Add book to cart context
     cartContext.addToCart(book);
+    enqueueSnackbar("Sucessfully added to cart", {
+      variant: "success",
+      anchorOrigin: {
+        horizontal: "right",
+        vertical: "top",
+      },
+    });
   };
 
   return (
