@@ -4,7 +4,7 @@ export const booksData = [
     imageUrl: "https://picsum.photos/300/300",
     title: "Duis aute",
     author: "Voluptate",
-    price: "$150",
+    price: 185,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
   },
@@ -13,7 +13,7 @@ export const booksData = [
     imageUrl: "https://picsum.photos/300/300",
     title: "Duis aute",
     author: "Voluptate",
-    price: "$150",
+    price: 125,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
   },
@@ -22,7 +22,7 @@ export const booksData = [
     imageUrl: "https://picsum.photos/300/300",
     title: "Duis aute",
     author: "Voluptate",
-    price: "$150",
+    price: 80,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
   },
@@ -31,7 +31,7 @@ export const booksData = [
     imageUrl: "https://picsum.photos/300/300",
     title: "Duis aute",
     author: "Voluptate",
-    price: "$150",
+    price: 100,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
   },
@@ -40,7 +40,7 @@ export const booksData = [
     imageUrl: "https://picsum.photos/300/300",
     title: "Duis aute",
     author: "Voluptate",
-    price: "$150",
+    price: 150,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
   },

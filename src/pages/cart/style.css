@@ -2,3 +2,8 @@
     background-color: #eeeeee;
     padding: 20px;
 }
+.total {
+    display: grid;
+    grid-template-columns: 74% auto 14%;
+    margin: 20px 0;
+}

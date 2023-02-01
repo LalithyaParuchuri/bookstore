@@ -19,18 +19,19 @@ export const CartItem = ({
 
   return (
     <div className="cart-item">
-      <img className="img" src={imageUrl} />
+      <div className="cart">
+        <img className="img" src={imageUrl} />
 
-      <div className="info">
-        <p>{title}</p>
-        <p>{author}</p>
-        <p>{description}</p>
+        <div>
+          <p>{title}</p>
+          <p>{author}</p>
+          <p>{description}</p>
+        </div>
+
+        <p>{price}</p>
       </div>
-
-      <p>{price}</p>
-
-      <div className="remove">
-        <img src={remove} onClick={onCartItemRemoveHandler} />
+      <div className="remove" onClick={onCartItemRemoveHandler}>
+        <img src={remove} />
         <p>Remove from cart</p>
       </div>
     </div>

@@ -21,12 +21,19 @@ function App() {
     setCartItems(updatedItems);
   };
 
+  const getTotal = () => {
+    return cartItems.reduce((p, c) => {
+      return p + c.price;
+    }, 0);
+  };
+
   return (
     <CartContext.Provider
       value={{
         cartItems,
         addToCart: addToCart,
         removeFromCart,
+        getTotal,
       }}
     >
       <div className="App">
