@@ -1,0 +1,26 @@
+.cart-item {
+    height: 150px;
+    display: grid;
+    grid-template-columns: auto 60% auto auto;
+    align-items: center;
+    border-bottom: 1px solid #696565;
+}
+
+.cart-item:last-child {
+    border: 0px;
+}
+
+.cart-item .img {
+    width: 100px;
+    height: 100px;
+}
+
+.remove {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.remove img {
+    width: 30px;
+    height: 30px;
+}
