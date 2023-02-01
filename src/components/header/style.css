@@ -13,3 +13,19 @@
     margin-left: 20px;
     font-size:40px;
 }
+
+.route {
+    margin-left: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.route a {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.nav {
+    display:  flex;
+}
