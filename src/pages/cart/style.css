@@ -1,0 +1,9 @@
+.cart-container {
+    background-color: #eeeeee;
+    padding: 20px;
+}
+.total {
+    display: grid;
+    grid-template-columns: 62% 10% auto;
+    margin: 20px 0;
+}

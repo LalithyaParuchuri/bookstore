@@ -1,24 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Header } from "./components/header";
+import { routes } from "./router";
+import { v4 } from "uuid";
+
+export const CartContext = createContext();
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+
+  //This will add book to cart
+  const addToCart = (book) => {
+    setCartItems([...cartItems, { cartItemID: v4(), ...book }]);
+  };
+
+  const removeFromCart = (cartItemID) => {
+    const updatedItems = cartItems.filter(
+      (item) => item.cartItemID != cartItemID
+    );
+    setCartItems(updatedItems);
+  };
+
+  const getTotal = () => {
+    return cartItems.reduce((p, c) => {
+      return p + c.price;
+    }, 0);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CartContext.Provider
+      value={{
+        cartItems,
+        addToCart: addToCart,
+        removeFromCart,
+        getTotal,
+      }}
+    >
+      <div className="App">
+        <BrowserRouter>
+          <Header />
+          <div style={{ padding: 20 }}>
+            <Routes>
+              {routes.map((r) => {
+                return <Route key={r.name} path={r.path} element={r.element} />;
+              })}
+            </Routes>
+          </div>
+        </BrowserRouter>
+      </div>
+    </CartContext.Provider>
   );
 }
 
